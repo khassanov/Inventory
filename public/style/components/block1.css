@@ -1,0 +1,76 @@
+.main {
+    
+    min-height: calc(100vh - 100px);
+   
+}
+
+
+
+.block {
+    width: 90%;
+    margin: 300px auto;
+    
+}
+
+.block-admin {
+    width: 100%;
+    margin: auto;
+}
+
+.block-admin--button {
+    width: 300px;
+    padding: 10px;
+    margin: auto;
+}
+
+.block-admin--table {
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+
+.login-form {
+    padding-top: 20px;
+    width: 220px;
+    height: 200px;
+    
+    margin: auto;
+}
+
+.login-form button {
+    
+    line-height: 50px;
+    margin: 10px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #12B797;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 5px 5px #888888;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    
+}
+
+.login-form button:hover{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+}
+
+.block-admin--button button {
+    
+    line-height: 50px;
+    margin: 10px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #12B797;
+    color: #fff;
+    font-size: 18px;
+    
+}
