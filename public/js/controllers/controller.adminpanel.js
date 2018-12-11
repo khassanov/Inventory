@@ -29,19 +29,19 @@ function AdminPanelCtrl($http, $scope, $state) {
 
 
     vm.save = function () {
-        if (vm.name != 0 &&
-            vm.description != 0 &&
-            vm.category != 0 &&
-            vm.userDBT != 0 &&
-            vm.invNumber != 0 &&
-            vm.state != 0 &&
-            vm.comment != 0
+        if (vm.name != '' &&
+            vm.serialNumber != '' &&
+            vm.category != '' &&
+            vm.userDBT != '' &&
+            vm.invNumber != '' &&
+            vm.state != '' &&
+            vm.comment != ''
 
         ) {
 
             var obj = {
                 name: vm.name,
-                description: vm.description,
+                serialNumber: vm.serialNumber,
                 category: vm.category,
                 userDBT: vm.userDBT,
                 invNumber: vm.invNumber,
@@ -88,7 +88,7 @@ function AdminPanelCtrl($http, $scope, $state) {
     }
     vm.updateBase = function () {
         if (vm.editBase && vm.editBase.name && vm.editBase.name.length != '' &&
-            vm.editBase.description && vm.editBase.description.length != '' &&
+            vm.editBase.serialNumber && vm.editBase.serialNumber.length != '' &&
             vm.editBase.category && vm.editBase.category.length != '' &&
             vm.editBase.userDBT && vm.editBase.userDBT.length != '' &&
             vm.editBase.invNumber && vm.editBase.invNumber.length != '' &&
@@ -101,7 +101,7 @@ function AdminPanelCtrl($http, $scope, $state) {
 
             sendData.append('_id', vm.editBase._id);
             sendData.append('name', vm.editBase.name);
-            sendData.append('description', vm.editBase.description);
+            sendData.append('serialNumber', vm.editBase.serialNumber);
             sendData.append('category', vm.editBase.category);
             sendData.append('userDBT', vm.editBase.userDBT);
             sendData.append('invNumber', vm.editBase.invNumber);

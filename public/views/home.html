@@ -1,5 +1,52 @@
 <div ng-controller="AuthCtrl as vm">
+    <div class="block" ng-if="!vm.user">
+        <form ng-submit="vm.login();">
+            <div class="modal" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Авторизация</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <i class="fa fa-envelope prefix grey-text"></i>
+                                <input type="email" id="defaultForm-email" class="form-control validate" ng-model="vm.emailLogin"
+                                    ng-class="{' is-error' : vm.errorsLogin.email}" placeholder="Введите E-mail">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email" ng-if="vm.errorsLogin.email"
+                                    ng-bind="vm.errorsLogin.email">Your email</label>
+                            </div>
 
+                            <div class="md-form mb-4">
+                                <i class="fa fa-lock prefix grey-text"></i>
+                                <input type="password" id="defaultForm-pass" class="form-control validate" ng-model="vm.passwordLogin"
+                                    ng-class="{' is-error' : vm.errorsLogin.password}" placeholder="Введите пароль">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass" ng-if="vm.errorsLogin.password"
+                                    ng-bind="vm.errorsLogin.password">Your password</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-default" form- type="submit">Войти</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div  id="loginButton"class="maskd-flex justify-content-center align-items-center">
+
+
+            <div class="text-center">
+
+                <a href="" class="btn btn-default btn-rounded mb-4 align-middle" data-toggle="modal" data-target="#modalLoginForm"
+                    ng-click="vm.showLogin=true">
+                    Регистрация</a>
+            </div>
+        </div>
+    </div>
     <div class="block" ng-if="!vm.user">
         <form ng-submit="vm.login();">
             <div class="modal" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -49,6 +96,7 @@
             </div>
         </div>
     </div>
+
 
 
 

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var documentSchema = new mongoose.Schema({
     name: String,
     invNumber: String,
-    description: String,
+    serialNumber: String,
     category: String,
     userDBT: String,
     state:String,

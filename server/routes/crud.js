@@ -1,14 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var fs = require('fs');
-var multer = require('multer');
-var path = require('path');
-var isAuthenticated = require('../utils/is_authenticated');
-var User = require('../models/User');
-var Hardware = require('../models/Hardware');
-var upload = multer({
-    dest: 'public/images/content'
-});
+const express = require('express');
+const router = express.Router();
+const isAuthenticated = require('../utils/is_authenticated');
+const User = require('../models/User');
+const Hardware = require('../models/Hardware');
 
 
 
@@ -36,12 +30,12 @@ router.get('/user/:user_id', function (req, res, next) {
 
     })
 })
-router.post('/', isAuthenticated, upload.single('img'), function (req, res, next) {
+router.post('/', isAuthenticated, function (req, res, next) {
 
     console.log(req.body);
     new Hardware({
         name: req.body.name,
-        description: req.body.description,
+        serialNumber: req.body.serialNumber,
         category: req.body.category,
         userDBT: req.body.userDBT,
         state: req.body.state,
@@ -59,7 +53,7 @@ router.post('/', isAuthenticated, upload.single('img'), function (req, res, next
 
 })
 
-router.put('/', isAuthenticated, upload.single('img'), function (req, res, next) {
+router.put('/', isAuthenticated,  function (req, res, next) {
 
 
     Hardware.findById(req.body._id).exec(function (err, product) {
@@ -70,7 +64,7 @@ router.put('/', isAuthenticated, upload.single('img'), function (req, res, next)
             });
         }
         product.name = req.body.name;
-        product.description = req.body.description;
+        product.serialNumber = req.body.serialNumber;
         product.category = req.body.category;
         product.invNumber = req.body.invNumber;
         product.userDBT = req.body.userDBT;

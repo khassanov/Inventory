@@ -76,7 +76,7 @@ router.post('/login', function (req, res, next) {
         errors.email = 'Введите e-mail';
     } else if (!validator.isEmail(req.body.email)) {
 
-        errors.email = 'Неверный форма e-mail';
+        errors.email = 'Неверный формат e-mail';
     }
 
     if (isEmpty(req.body.password)) {

@@ -3,126 +3,6 @@
 <div class="block-admin">
    
 
-    <!-- <div class="modal" ng-if="vm.addModule">
-
-        <div class="modal-backdrop" ng-click="vm.openAddModule(false)">
-        </div>
-        <div class="modal-inner ">
-            <div class="modal-close " ng-click="vm.openAddModule(false)">
-                <img src="images/close.svg " class="modal-close">
-            </div>
-            <div class="modal-title ">
-                Добавление записи в базу данных
-            </div>
-            <div class="modal-form ">
-                <form ng-submit="vm.save();">
-
-
-                    <input type="text" ng-model="vm.name" placeholder="Наименование продукта">
-                    <div class="form-field--name">
-
-
-                    </div>
-
-                    <div class="form-field">
-                        <input type="text" ng-model="vm.invNumber" placeholder="Инвентарный номер"></input>
-
-                    </div>
-
-
-                    <div class="form-field ">
-                        <input type="text" class="textarea" ng-model="vm.description" placeholder="Описание"></input>
-
-                    </div>
-
-
-                    <div class="form-field">
-                        <input type="text" ng-model="vm.category" placeholder="Категория"></input>
-
-                    </div>
-
-                    <div class="form-field ">
-                        <input type="text" ng-model="vm.userDBT" placeholder="Пользователь"></input>
-
-                    </div>
-
-                    <div class="form-field">
-                        <input type="text" ng-model="vm.state" placeholder="Состояние"></input>
-
-                    </div>
-
-                    <div class="form-field">
-                        <input type="text" class="textarea" ng-model="vm.comment" placeholder="Комментарий"></input>
-
-                    </div>
-
-
-                    
-
-                    <div class="form-field">
-                        <button type="submit"> Сохранить</button>
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="modal " ng-if="vm.editModule ">
-        <div class="modal-backdrop " ng-click="vm.openEditModule() ">
-        </div>
-        <div class="modal-inner ">
-            <div class="modal-close " ng-click="vm.openEditModule() ">
-                <img src="images/close.svg " class="module-close ">
-            </div>
-            <div class="modal-title ">
-                Редактирование товара
-            </div>
-            <div class="modal-form ">
-                <form ng-submit="vm.updateBase() ">
-                    <div class="form-field ">
-                        <input ng-model="vm.editBase.name" type="text" class="input" name=" "></input>
-                    </div>
-
-                    <div class="form-field ">
-                        <input ng-model="vm.editBase.invNumber" type="text" class="input"></input>
-                    </div>
-
-                    <div class="form-field ">
-                        <input ng-model="vm.editBase.description" type="text" class="input"></input>
-                    </div>
-
-                    <div class="form-field ">
-                        <input ng-model="vm.editBase.category" type="text" class="input"></input>
-                    </div>
-
-                    <div class="form-field ">
-                        <input ng-model="vm.editBase.userDBT" type="text" class="input"></input>
-                    </div>
-
-
-                    <div class="form-field ">
-                        <input input ng-model="vm.editBase.state" type="text" class="input"></input>
-                    </div>
-
-                    <div class="form-field ">
-                        <input ng-model="vm.editBase.comment" type="text" class="input"></input>
-                    </div>
-
-                    
-                    <div class="form-field">
-                        <button type="submit"> Сохранить</button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-
-    </div> -->
- 
-
     <form ng-submit="vm.updateBase()">
             <div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -146,7 +26,7 @@
                                 </div>
                                 <div class="md-form mb-2">
             
-                                    <input type="text"  class="form-control" ng-model="vm.editBase.description">
+                                    <input type="text"  class="form-control" ng-model="vm.editBase.serialNumber">
             
                                 </div>
                                 <div class="md-form mb-5">
@@ -205,7 +85,7 @@
                     </div>
                     <div class="md-form mb-2">
 
-                        <input type="text"  class="form-control" ng-model="vm.description" placeholder="Описание">
+                        <input type="text"  class="form-control" ng-model="vm.serialNumber" placeholder="Описание">
 
                     </div>
                     <div class="md-form mb-5">
@@ -250,7 +130,7 @@
                         
                         <th class="text-center">Наименование</th>
                         <th class="text-center">Инвентарный номер</th>
-                        <th class="text-center">Описание</th>
+                        <th class="text-center">Серийный номер</th>
                         <th class="text-center">Категория</th>
                         <th class="text-center">Пользователь</th>
                         <th class="text-center">Состояние</th>
@@ -262,7 +142,7 @@
                        
                         <td class="pt-3-half" contenteditable="true" ng-bind="product.name" ui-sref="singleproduct({id: product._id})"></td>
                         <td class="pt-3-half" contenteditable="true" ng-bind="product.invNumber"></td>
-                        <td class="pt-3-half" contenteditable="true" ng-bind="product.description | limitTo:50" ui-sref="singleproduct({id:
+                        <td class="pt-3-half" contenteditable="true" ng-bind="product.serialNumber | limitTo:50" ui-sref="singleproduct({id:
                     product._id})"></td>
                         <td class="pt-3-half" contenteditable="true" ng-bind="product.category"></td>
                         <td class="pt-3-half" contenteditable="true" ng-bind="product.userDBT"></td>
